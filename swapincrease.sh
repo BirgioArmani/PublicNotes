@@ -9,6 +9,6 @@ apt-get install pv -y
 cd /var/
 touch swapfile
 chmod 600 swapfile
-dd if=/dev/zero of=/var/swapfile bs=1024k count=30000 | pv -s 30G -n "Expanding swapfile partition"
+dd if=/dev/zero of=/var/swapfile bs=1024k count=30000 | pv -s 30G
 mkswap /var/swapfile
 swapon /var/swapfile
