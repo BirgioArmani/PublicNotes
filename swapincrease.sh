@@ -2,14 +2,15 @@
 
 #This bit installs pv because sitting and looking at nothing sucks.
 
-apt-get install pv -y
+#apt-get install pv -y
 
 # This shell script simply increases swap space to 30GB on gnu linux systems. May take a while to run. 
 
 cd /var/
 touch swapfile
 chmod 600 swapfile
-dd if=/dev/zero | pv -s 30G | sudo dd of=/var/swapfile bs=1024k count=30000
+echo "Swap File setting, may take a while. You will recieve a notification when complete."
+dd if=/dev/zero of=/var/swapfile bs=1024k count=30000
 mkswap /var/swapfile
 swapon /var/swapfile
 echo "Complete! Verify updated swap."
