@@ -9,6 +9,7 @@ apt-get install pv -y
 cd /var/
 touch swapfile
 chmod 600 swapfile
-dd if=/dev/zero of=/var/swapfile bs=1024k count=30000 | pv -s 30G
+dd if=/dev/zero | pv -s 30G | sudo dd of=/var/swapfile bs=1024k count=30000
 mkswap /var/swapfile
 swapon /var/swapfile
+echo "Complete! Verify updated swap."
