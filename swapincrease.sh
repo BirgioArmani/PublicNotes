@@ -9,7 +9,7 @@
 cd /var/
 touch swapfile
 chmod 600 swapfile
-echo "Swap File setting, may take a while. You will recieve a notification when complete."
+echo "Swap File inflating, may take a while. You will recieve a notification when complete."
 dd if=/dev/zero of=/var/swapfile bs=1024k count=30000
 mkswap /var/swapfile
 swapon /var/swapfile
